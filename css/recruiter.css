@@ -1,0 +1,79 @@
+/* =========================================================
+   recruiter.css: clean one-page mode + print styles
+   Works without JavaScript thanks to :has(#recruiter:checked)
+   ========================================================= */
+@layer recruiter {
+  .recruiter-note { display: none; }
+
+  :root:is([data-recruiter], :has(#recruiter:checked)) {
+    --surface: var(--surface-solid);
+    --blur: 0px;
+    --sysbar-h: 0px;
+    --dock-h: 0px;
+    --radius: 10px;
+    --radius-sm: 8px;
+  }
+  :root:is([data-recruiter], :has(#recruiter:checked)) body::before { background: var(--bg); }
+  :root:is([data-recruiter], :has(#recruiter:checked)) body { padding-bottom: 2rem; }
+
+  /* Hide decoration and playful UI */
+  :root:is([data-recruiter], :has(#recruiter:checked)) :is(
+    .sysbar, .island, .dock, .home-indicator, .fab, .window__bar, .switcher,
+    .ide, .frames-panel, .arch3d, .bloc, .pipeline, .legend, .yaml, .status-badge, .footer__tip
+  ) { display: none; }
+
+  :root:is([data-recruiter], :has(#recruiter:checked)) main { width: min(880px, 100% - 2rem); gap: 1.25rem; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .window { box-shadow: none; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .window__body { padding: 1.5rem; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .hero { padding-top: 0; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .hero h1 { font-size: var(--step-3); background: none; color: var(--text); }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .hero__role { font-size: var(--step-1); max-width: none; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .section-head { margin-bottom: 1rem; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .section-head h2 { font-size: var(--step-2); }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .section-lead { display: none; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .role-card { position: static; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .notif__inner { box-shadow: none; padding: .6rem .8rem; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .arch { grid-template-columns: 1fr; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .stat__num { font-size: var(--step-3); }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .reveal { animation: none; opacity: 1; translate: none; scale: none; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .app-card:hover { transform: none; }
+  /* Carousel becomes a simple grid for skimming */
+  :root:is([data-recruiter], :has(#recruiter:checked)) :is(.carousel__bar, .carousel__progress) { display: none; }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .apps {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    overflow: visible; margin: 0; padding: 0;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  :root:is([data-recruiter], :has(#recruiter:checked)) .apps .app-card { animation: none; }
+
+  :root:is([data-recruiter], :has(#recruiter:checked)) .recruiter-note {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem;
+    padding: .8rem 1rem;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+  }
+  .recruiter-note__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+  /* ---------------- Print (Ctrl+P) ---------------- */
+  @media print {
+    :root { --surface: #fff; --surface-solid: #fff; --surface-2: #fff; --text: #000; --muted: #333; --border: #ccc; --sysbar-h: 0px; --dock-h: 0px; }
+    body { padding: 0; background: #fff; font-size: 10.5pt; }
+    body::before { display: none; }
+    .sysbar, .island, .dock, .home-indicator, .fab, .controls, .window__bar, .ide, .frames-panel,
+    .arch3d, .bloc, .pipeline, .legend, .yaml, .contact__form, .recruiter-note, .toast, .fps,
+    .status-badge, .hero__cta, .app-card__foot .btn, .footer__tip, dialog, [popover], .skip-link { display: none !important; }
+    main { width: 100%; gap: 10pt; }
+    .carousel__bar, .carousel__progress { display: none !important; }
+    .apps { grid-auto-flow: row !important; grid-template-columns: 1fr 1fr !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; -webkit-mask-image: none !important; mask-image: none !important; }
+    .apps .app-card { animation: none !important; opacity: 1 !important; scale: none !important; }
+    .window { box-shadow: none; border: 0; backdrop-filter: none; }
+    .window__body { padding: 0; }
+    .hero h1 { background: none; color: #000; font-size: 22pt; }
+    .reveal { animation: none !important; opacity: 1 !important; translate: none !important; }
+    .app-card, .notif, .stat, .skill-group, .panel, .role-card { break-inside: avoid; }
+    .role-card { position: static; }
+    a { color: #000; }
+  }
+}

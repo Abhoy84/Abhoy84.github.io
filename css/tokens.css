@@ -1,0 +1,84 @@
+/* =========================================================
+   tokens.css: layer order, design tokens, light/dark theme
+   ========================================================= */
+@layer reset, tokens, base, platforms, sections, recruiter, utilities;
+
+/* Registered custom properties so CSS can animate them */
+@property --gap {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 20px;
+}
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@layer tokens {
+  :root {
+    /* Typography */
+    --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+    --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+    --step-0: clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem);
+    --step-1: clamp(1.1rem, 1.02rem + 0.4vw, 1.35rem);
+    --step-2: clamp(1.35rem, 1.2rem + 0.8vw, 1.8rem);
+    --step-3: clamp(1.75rem, 1.4rem + 1.7vw, 2.75rem);
+    --step-4: clamp(2.5rem, 1.6rem + 4.2vw, 5rem);
+
+    /* Spacing */
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-s: 0.75rem;
+    --space-m: 1.25rem;
+    --space-l: 2rem;
+    --space-xl: 3.5rem;
+
+    /* Brand (Flutter-inspired) */
+    --brand: #0175C2;
+    --brand-2: #13B9A5;
+    --ok: #15803d;
+    --ok-soft: rgb(21 128 61 / .12);
+    --warn: #b45309;
+    --warn-soft: rgb(180 83 9 / .12);
+    --bad: #dc2626;
+
+    /* Motion */
+    --ease-out: cubic-bezier(.2, .8, .2, 1);
+    --ease-spring: cubic-bezier(.3, 1.35, .45, 1);
+
+    /* Light theme surfaces */
+    color-scheme: light;
+    --text: #0f172a;
+    --muted: #475569;
+    --faint: #64748b;
+    --surface-solid: #ffffff;
+    --surface-2: rgb(15 23 42 / .045);
+    --border: rgb(15 23 42 / .11);
+    --bar: rgb(255 255 255 / .62);
+    --shadow: 0 18px 40px -18px rgb(15 23 42 / .35), 0 2px 6px rgb(15 23 42 / .06);
+    --shadow-sm: 0 4px 14px -6px rgb(15 23 42 / .25);
+
+    /* Platform chrome heights (overridden per platform) */
+    --sysbar-h: 0px;
+    --dock-h: 64px;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --text: #e8eef6;
+    --muted: #a6b3c5;
+    --faint: #8494a9;
+    --surface-solid: #151a24;
+    --surface-2: rgb(255 255 255 / .05);
+    --border: rgb(255 255 255 / .11);
+    --bar: rgb(18 22 30 / .6);
+    --shadow: 0 20px 50px -20px rgb(0 0 0 / .8), 0 2px 6px rgb(0 0 0 / .3);
+    --shadow-sm: 0 4px 14px -6px rgb(0 0 0 / .6);
+    --ok: #4ade80;
+    --ok-soft: rgb(74 222 128 / .14);
+    --warn: #fbbf24;
+    --warn-soft: rgb(251 191 36 / .14);
+  }
+}

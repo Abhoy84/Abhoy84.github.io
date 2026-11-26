@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Abhoy Mallik · Flutter Developer (Android, iOS, Windows &amp; macOS)</title>
+  <meta name="description"
+    content="Flutter developer in Kolkata shipping 35+ white-label apps to Google Play, the App Store, Microsoft Store and macOS for 20,000+ active users. Bloc, GetX, Firebase, CI/CD and clean architecture.">
+  <meta name="author" content="Abhoy Mallik">
+  <meta name="theme-color" content="#0B2545">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Social sharing preview (LinkedIn, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abhoy Mallik · Flutter Developer">
+  <meta property="og:description"
+    content="One codebase, four platforms, 30+ branded apps. Flutter apps on Google Play, the App Store, Microsoft Store and macOS for 20,000+ users.">
+  <meta property="og:url" content="https://abhoy84.github.io/">
+  <link rel="canonical" href="https://abhoy84.github.io/">
+  <!-- TODO: add <meta property="og:image" content="https://abhoy84.github.io/assets/img/og-image.png"> (1200x630 screenshot) -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhoy Mallik",
+  "jobTitle": "Flutter Developer",
+  "worksFor": { "@type": "Organization", "name": "Solution Infotech" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Kolkata", "addressCountry": "IN" },
+  "alumniOf": "MAKAUT University",
+  "knowsAbout": ["Flutter", "Dart", "Firebase", "Bloc", "GetX", "Dio", "Clean Architecture", "CI/CD", "Android", "iOS", "Windows", "macOS"],
+  "url": "https://abhoy84.github.io/",
+  "sameAs": ["https://www.linkedin.com/in/abhoy-mallik-4588842b8", "https://github.com/Abhoy84"]
+}
+</script>
+
+  <!-- Set platform, theme and recruiter mode before first paint (no flash) -->
+  <script>
+    (function () {
+      var d = document.documentElement, P = ['android', 'ios', 'windows', 'macos'], p, t, r;
+      try { p = new URLSearchParams(location.search).get('platform'); } catch (e) { }
+      try {
+        if (P.indexOf(p) < 0) p = localStorage.getItem('platform');
+        t = localStorage.getItem('theme');
+        r = localStorage.getItem('recruiter');
+      } catch (e) { }
+      if (P.indexOf(p) < 0) {
+        var u = navigator.userAgent;
+        p = /iPhone|iPad|iPod/.test(u) ? 'ios' : /Android/.test(u) ? 'android' : /Mac/.test(u) ? 'macos' : 'windows';
+      }
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      d.setAttribute('data-platform', p);
+      d.setAttribute('data-theme', t);
+      if (r === '1') d.setAttribute('data-recruiter', '');
+      d.className += ' js';
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/platforms.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/recruiter.css">
+
+  <script src="js/platform-switch.js" defer></script>
+  <script src="js/hot-reload.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ Icon sprite ============ -->
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+    </symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7.5" height="7.5" rx="2" />
+      <rect x="13.5" y="3" width="7.5" height="7.5" rx="2" />
+      <rect x="3" y="13.5" width="7.5" height="7.5" rx="2" />
+      <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2" />
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+      <path d="M6 9a6 6 0 1 1 12 0c0 6.5 2.5 8.5 2.5 8.5h-17S6 15.5 6 9z" />
+      <path d="M10 21a2.2 2.2 0 0 0 4 0" />
+    </symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24">
+      <path d="M5.5 15.5c-1.6 1.6-2 5-2 5s3.4-.4 5-2" />
+      <path d="M9 15l-2.9-2.9C7.4 7.6 11 4 16 3.2c1.3-.2 3.3-.2 4.8 0 .2 1.5.2 3.5 0 4.8C20 13 16.4 16.6 12 18z" />
+      <circle cx="15.2" cy="8.8" r="1.7" />
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <path d="M4 20V11M10 20V5M16 20v-6M22 20H2" />
+    </symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24">
+      <path d="M12 3l9 5-9 5-9-5z" />
+      <path d="M3 13l9 5 9-5" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2.5" />
+      <path d="M3.5 7l8.5 6 8.5-6" />
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path d="M12 3v12M7 10l5 5 5-5M4 20h16" />
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1" />
+      <path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" />
+    </symbol>
+    <symbol id="i-start" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="8" height="8" rx="1.2" />
+      <rect x="13" y="3" width="8" height="8" rx="1.2" />
+      <rect x="3" y="13" width="8" height="8" rx="1.2" />
+      <rect x="13" y="13" width="8" height="8" rx="1.2" />
+    </symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24">
+      <path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0" />
+      <circle cx="12" cy="19" r="1" />
+    </symbol>
+    <symbol id="i-battery" viewBox="0 0 28 24">
+      <rect x="1.5" y="6" width="22" height="12" rx="3.5" />
+      <rect x="4" y="8.5" width="15" height="7" rx="1.5" class="fill" />
+      <path d="M26 10v4" />
+    </symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24">
+      <path d="M4 20v-3M9 20v-6M14 20v-9M19 20V5" />
+    </symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24">
+      <path d="M4.5 18a9 9 0 1 1 15 0" />
+      <path d="M12 13l4-4" />
+      <circle cx="12" cy="13" r="1.3" />
+    </symbol>
+    <symbol id="i-left" viewBox="0 0 24 24">
+      <path d="M15 5l-7 7 7 7" />
+    </symbol>
+    <symbol id="i-right" viewBox="0 0 24 24">
+      <path d="M9 5l7 7-7 7" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18" />
+    </symbol>
+  </svg>
+
+  <!-- ============ System bar (decorative, changes per platform) ============ -->
+  <div class="sysbar" aria-hidden="true" style="view-transition-name: sysbar">
+    <div class="sysbar__left">
+      <span class="only-phone" data-clock="short">9:41</span>
+      <span class="only-mac sysbar__logo">&#9670;</span>
+      <span class="only-mac sysbar__app">Portfolio</span>
+      <span class="only-mac sysbar__menu">File</span>
+      <span class="only-mac sysbar__menu">Edit</span>
+      <span class="only-mac sysbar__menu">View</span>
+      <span class="only-mac sysbar__menu">Window</span>
+      <span class="only-mac sysbar__menu">Help</span>
+    </div>
+    <div class="sysbar__right">
+      <svg class="only-phone">
+        <use href="#i-signal" />
+      </svg>
+      <svg>
+        <use href="#i-wifi" />
+      </svg>
+      <svg class="sysbar__battery">
+        <use href="#i-battery" />
+      </svg>
+      <span class="only-mac" data-clock="long"></span>
+    </div>
+  </div>
+
+  <!-- iOS Dynamic Island (interactive) -->
+  <button class="island only-ios" type="button" aria-expanded="false" aria-controls="island-content"
+    style="view-transition-name: island">
+    <span class="sr-only">Show what I'm building right now</span>
+    <span class="island__content" id="island-content">
+      <span class="island__icon" aria-hidden="true">DTH</span>
+      <span class="island__text">
+        <strong>Shipping DTH LMS Pro</strong>
+        <span>Android &#10003; &middot; iOS &#10003; &middot; Windows &#10003; &middot; macOS &#10003;</span>
+      </span>
+      <span class="island__ring" aria-hidden="true"></span>
+    </span>
+  </button>
+
+  <!-- ============ Controls ============ -->
+  <header class="controls" style="view-transition-name: controls">
+    <a class="brand" href="#top" aria-label="Abhoy Mallik, back to top"><span class="brand__mark"
+        aria-hidden="true">AM</span></a>
+
+    <fieldset class="switcher">
+      <legend class="sr-only">Choose a platform style for this portfolio</legend>
+      <label><input type="radio" name="platform" value="android"><span>Android</span></label>
+      <label><input type="radio" name="platform" value="ios"><span>iOS</span></label>
+      <label><input type="radio" name="platform" value="windows"><span>Windows</span></label>
+      <label><input type="radio" name="platform" value="macos"><span>macOS</span></label>
+    </fieldset>
+
+    <label class="toggle" title="Recruiter mode: a clean, printable one-page view">
+      <input type="checkbox" id="recruiter" role="switch">
+      <span class="toggle__track" aria-hidden="true"></span>
+      <span class="toggle__label">Recruiter<span class="hide-sm"> mode</span></span>
+    </label>
+
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <svg aria-hidden="true">
+        <use href="#i-moon" />
+      </svg>
+    </button>
+  </header>
+
+  <main id="main">
+
+    <!-- Recruiter mode banner -->
+    <aside class="recruiter-note" aria-label="Recruiter mode">
+      <p><strong>Recruiter mode:</strong> a clean one-page view with no effects.</p>
+      <div class="recruiter-note__actions">
+        <a class="btn btn--primary btn--sm" href="assets/cv/Abhoy_Mallik_CV.pdf" download>
+          <svg aria-hidden="true">
+            <use href="#i-download" />
+          </svg> Download CV (PDF)</a>
+        <button class="btn btn--sm" type="button" data-print>Print this page</button>
+      </div>
+    </aside>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__intro">
+        <!-- TODO: remove this badge if you are not looking for a new role -->
+        <p class="status-badge"><span class="pulse" aria-hidden="true"></span> Open to new opportunities</p>
+        <p class="hero__hello">Hi, I'm</p>
+        <h1 id="hero-title">Abhoy Mallik</h1>
+        <p class="hero__role">Flutter Developer. I ship one codebase to <strong>Android</strong>, <strong>iOS</strong>,
+          <strong>Windows</strong> and <strong>macOS</strong>, and publish it to every store.</p>
+        <ul class="hero__facts" role="list">
+          <li><strong>2+</strong> years experience</li>
+          <li><strong>30+</strong> apps published</li>
+          <li><strong>20,000+</strong> active users</li>
+          <li>Kolkata, India</li>
+        </ul>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projects">View projects</a>
+          <a class="btn" href="assets/cv/Abhoy_Mallik_CV.pdf" download>
+            <svg aria-hidden="true">
+              <use href="#i-download" />
+            </svg> Download CV</a>
+        </div>
+      </div>
+
+      <div class="window ide" style="view-transition-name: ide">
+        <div class="window__bar" aria-hidden="true">
+          <span class="lights only-mac"><i></i><i></i><i></i></span>
+          <span class="window__label">portfolio &mdash; lib/main.dart</span>
+          <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+        </div>
+
+        <div class="ide__grid">
+          <div class="editor">
+            <div class="editor__tabs">
+              <span class="editor__tab is-active" aria-hidden="true">main.dart</span>
+              <span class="editor__tab" aria-hidden="true">pubspec.yaml</span>
+              <div class="editor__actions">
+                <button class="btn btn--sm btn--accent" id="hot-reload" type="button">&#9889; Hot reload
+                  <kbd>r</kbd></button>
+                <button class="btn btn--sm btn--ghost" id="hot-restart" type="button">Restart <kbd>R</kbd></button>
+              </div>
+            </div>
+            <div class="code" role="group" aria-label="Dart code describing me. Two values are editable.">
+              <div class="line"><span class="tk-kw">import</span> <span
+                  class="tk-str">'package:flutter/material.dart'</span>;</div>
+              <div class="line"> </div>
+              <div class="line"><span class="tk-kw">class</span> <span class="tk-ty">AbhoyMallik</span> <span
+                  class="tk-kw">extends</span> <span class="tk-ty">Flutter</span> {</div>
+              <div class="line"> <span class="tk-kw">const</span> <span class="tk-ty">AbhoyMallik</span>({<span
+                  class="tk-kw">super</span>.key});</div>
+              <div class="line"> </div>
+              <div class="line"> <span class="tk-kw">final</span> role = <span class="tk-str">'Flutter
+                  Developer'</span>;</div>
+              <div class="line"> <span class="tk-kw">final</span> experience = <span class="tk-str">'2+ years'</span>;
+              </div>
+              <div class="line"> <span class="tk-kw">final</span> activeUsers = <span class="tk-num">20000</span>;</div>
+              <div class="line"> <span class="tk-kw">final</span> platforms = [android, ios, windows, macos];</div>
+              <div class="line"> </div>
+              <div class="line"> <span class="tk-cm">// Try it: edit these two values, then press r</span></div>
+              <div class="line"> <span class="tk-kw">final</span> accent = <span class="tk-ty">Color</span>(<span
+                  class="tk-num">0xFF<span class="editable" data-edit="accent" contenteditable="true" spellcheck="false"
+                    role="textbox" aria-label="Accent colour, six-digit hex">13B9A5</span></span>);<span class="swatch"
+                  id="swatch" aria-hidden="true"></span></div>
+              <div class="line"> <span class="tk-kw">final</span> greeting = <span class="tk-str">'<span
+                    class="editable" data-edit="greeting" contenteditable="true" spellcheck="false" role="textbox"
+                    aria-label="Greeting text">Hi, I build apps for every screen.</span>'</span>;</div>
+              <div class="line"> </div>
+              <div class="line"> <span class="tk-an">@override</span></div>
+              <div class="line"> <span class="tk-ty">Widget</span> <span class="tk-fn">build</span>(<span
+                  class="tk-ty">BuildContext</span> context) =&gt; <span class="tk-ty">ProfileCard</span>(</div>
+              <div class="line"> accent: accent, greeting: greeting,</div>
+              <div class="line"> );</div>
+              <div class="line">}</div>
+            </div>
+            <p class="editor__hint">Edit the <mark>highlighted values</mark>, then press <kbd>r</kbd> to hot reload or
+              <kbd>R</kbd> to restart.</p>
+          </div>
+
+          <div class="preview">
+            <div class="device" style="view-transition-name: device">
+              <div class="device__notch" aria-hidden="true"></div>
+              <div class="device__bar" aria-hidden="true">
+                <span class="lights only-mac"><i></i><i></i><i></i></span>
+                <span>ProfileCard</span>
+                <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+              </div>
+              <div class="device__screen">
+                <article class="profile-card" id="profile-card" aria-label="Live preview of the profile card">
+                  <div class="profile-card__avatar" aria-hidden="true">AM</div>
+                  <p class="profile-card__name">Abhoy Mallik</p>
+                  <p class="profile-card__role">Flutter Developer</p>
+                  <p class="profile-card__greeting" id="greeting">Hi, I build apps for every screen.</p>
+                  <ul class="profile-card__stats" role="list">
+                    <li><b>2+</b><span>Years</span></li>
+                    <li><b>30+</b><span>Apps</span></li>
+                    <li><b>20k+</b><span>Users</span></li>
+                  </ul>
+                  <ul class="profile-card__platforms" role="list" aria-label="Platforms">
+                    <li class="ok">Android</li>
+                    <li class="ok">iOS</li>
+                    <li class="ok">Windows</li>
+                    <li class="ok">macOS</li>
+                  </ul>
+                  <p class="profile-card__device" data-device-name>Running on Windows</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal" aria-hidden="true">
+            <div class="terminal__head"><span>TERMINAL</span><span>flutter</span></div>
+            <div class="terminal__body" id="terminal"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="window section" id="projects" aria-labelledby="projects-title"
+      style="view-transition-name: w-projects">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">Projects</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="projects-title">Apps I've built and shipped</h2>
+          <p class="section-lead">Each project is an "app". Open one to read the full case study.</p>
+        </header>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel__bar">
+            <p class="carousel__hint"><span aria-hidden="true">&#8596;</span> Swipe, drag or use the arrows</p>
+            <div class="carousel__nav">
+              <button class="carousel__btn" type="button" data-dir="-1" aria-label="Previous project"><svg
+                  aria-hidden="true">
+                  <use href="#i-left" />
+                </svg></button>
+              <button class="carousel__btn" type="button" data-dir="1" aria-label="Next project"><svg
+                  aria-hidden="true">
+                  <use href="#i-right" />
+                </svg></button>
+            </div>
+          </div>
+          <div class="apps" tabindex="0" role="region" aria-label="Projects. Scroll sideways to see more.">
+            <article class="app-card" style="--app: linear-gradient(135deg,#0175C2,#13B9A5)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">DTH</div>
+                <div class="app-card__body">
+                  <h3>DTH LMS Pro</h3>
+                  <p>White-label learning platform: one codebase, 30+ franchise-branded apps, each with its own logo and
+                    name, for 20,000+ students.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--live">Android &middot; 30+ Play Store apps</li>
+                    <li class="badge badge--live">iOS &middot; App Store</li>
+                    <li class="badge badge--live">Windows &middot; Microsoft Store</li>
+                    <li class="badge badge--ok">macOS</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>Bloc</li>
+                    <li>Firebase</li>
+                    <li>media_kit</li>
+                    <li>Zoom SDK</li>
+                    <li>REST</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>30+</strong> branded apps</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-dth">Open case study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="app-card" style="--app: linear-gradient(135deg,#7C3AED,#DB2777)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">FA</div>
+                <div class="app-card__body">
+                  <h3>Franchise &amp; Teacher Admin</h3>
+                  <p>Role-based admin panel for franchise managers and teachers, synced in real time.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--ok">Android</li>
+                    <li class="badge badge--ok">iOS</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>GetX</li>
+                    <li>Firestore</li>
+                    <li>Zoom SDK</li>
+                    <li>Real-time sync</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>20+</strong> franchise admins</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-admin">Open case
+                      study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="app-card" style="--app: linear-gradient(135deg,#B45309,#F59E0B)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">VS</div>
+                <div class="app-card__body">
+                  <h3>The Valuation School</h3>
+                  <p>CA exam preparation app for Foundation, Intermediate and Final students.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--live">Android &middot; Google Play</li>
+                    <li class="badge badge--ok">iOS</li>
+                    <li class="badge badge--ok">Windows</li>
+                    <li class="badge badge--ok">macOS</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>Flutter</li>
+                    <li>OTP sign-in</li>
+                    <li>Zoom SDK</li>
+                    <li>Study content</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>4</strong> platforms</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-vs">Open case study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="app-card" style="--app: linear-gradient(135deg,#BE123C,#F97316)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">AB</div>
+                <div class="app-card__body">
+                  <h3>Ashwini Bajaj</h3>
+                  <p>Private learning app for Ashwini Bajaj's students, shared directly with them instead of public app
+                    stores.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--ok">Android</li>
+                    <li class="badge badge--ok">iOS</li>
+                    <li class="badge badge--ok">Windows</li>
+                    <li class="badge badge--ok">macOS</li>
+                    <li class="badge badge--team">Private distribution</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>Flutter</li>
+                    <li>OTP sign-in</li>
+                    <li>Zoom SDK</li>
+                    <li>Study content</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>4</strong> platforms</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-ab">Open case study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="app-card" style="--app: linear-gradient(135deg,#0F766E,#0B2545)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">P2T</div>
+                <div class="app-card__body">
+                  <h3>Peaks2Tails</h3>
+                  <p>Learning app for a financial risk modelling and quantitative finance training provider.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--ok">Android</li>
+                    <li class="badge badge--ok">iOS</li>
+                    <li class="badge badge--ok">Windows</li>
+                    <li class="badge badge--ok">macOS</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>Flutter</li>
+                    <li>Dart</li>
+                    <li>Zoom SDK</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>4</strong> platforms</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-p2t">Open case study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="carousel__progress" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="window section" id="experience" aria-labelledby="experience-title"
+      style="view-transition-name: w-experience">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">Experience</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title">Experience &amp; milestones</h2>
+          <p class="section-lead">Flutter Developer at Solution Infotech since May 2024, owning apps from code to store
+            release.</p>
+        </header>
+
+        <div class="xp-grid">
+          <article class="role-card">
+            <p class="role-card__dates">May 2024 &ndash; Present</p>
+            <h3>Flutter Developer</h3>
+            <p class="role-card__company">Solution Infotech &middot; Kolkata</p>
+            <ul>
+              <li>Delivered 30+ white-label apps from one DTH LMS Pro codebase, each branded with a franchise's own logo
+                and name, serving 20,000+ active users.</li>
+              <li>Built and shipped apps for Android, iOS, Windows and macOS; published to Google Play, the App Store,
+                Microsoft Store and Mac App Store, plus desktop installers.</li>
+              <li>Set up CI/CD with GitHub Actions and wrote unit and widget tests.</li>
+              <li>Integrated the Zoom SDK for live classes on Android, iOS, Windows and macOS in every project.</li>
+              <li>Integrated REST APIs with Dio, Firestore, Firebase Auth and encrypted local storage.</li>
+              <li>Built push notification flows with OneSignal and FCM: +30% engagement and session retention.</li>
+              <li>Cut UI lag by 40% on mid-range Android with lazy loading, widget-level caching and image optimisation.
+              </li>
+              <li>Applied Bloc, Provider and GetX across projects to keep code maintainable.</li>
+              <li>Worked in 2-week Agile/Scrum sprints with backend, QA and product; reviewed code and wrote onboarding
+                docs for junior developers.</li>
+            </ul>
+          </article>
+
+          <ol class="notifs" role="list">
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#0B2545,#0175C2)">
+                <span class="notif__icon" aria-hidden="true">SI</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Career</span><time datetime="2024-05">May
+                      2024</time></span>
+                  <strong class="notif__title">Joined Solution Infotech</strong>
+                  <span class="notif__text">Started as a Flutter Developer on education and service apps.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <button class="notif__inner" type="button" data-open="case-dth"
+                style="--app: linear-gradient(135deg,#0175C2,#13B9A5)">
+                <span class="notif__icon" aria-hidden="true">DTH</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">DTH LMS Pro</span><span>Live</span></span>
+                  <strong class="notif__title">Now serving 20,000+ students</strong>
+                  <span class="notif__text">Across 30+ franchise-branded apps. Tap to open the case study.</span>
+                </span>
+              </button>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#16A34A,#0F766E)">
+                <span class="notif__icon" aria-hidden="true">30+</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">White-label</span><span>Google Play</span></span>
+                  <strong class="notif__title">30+ branded apps published</strong>
+                  <span class="notif__text">One DTH LMS Pro codebase, rebranded with each franchise's logo and name,
+                    each live on Google Play.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#1f2937,#6b7280)">
+                <span class="notif__icon" aria-hidden="true">iOS</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">App Store</span><span>iOS</span></span>
+                  <strong class="notif__title">DTH LMS Pro live on the App Store</strong>
+                  <span class="notif__text">Built and published by me: one common iOS app for all franchises.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#0067C0,#4CC2FF)">
+                <span class="notif__icon" aria-hidden="true">WIN</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Microsoft Store</span><span>Windows</span></span>
+                  <strong class="notif__title">Franchise apps on the Microsoft Store</strong>
+                  <span class="notif__text">Windows apps published for 5&ndash;6 DTH franchises, plus macOS
+                    releases.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#DB2777,#F59E0B)">
+                <span class="notif__icon" aria-hidden="true">FCM</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Engagement</span><span>OneSignal +
+                      FCM</span></span>
+                  <strong class="notif__title">Engagement up 30%</strong>
+                  <span class="notif__text">Push notification flows lifted engagement and session retention.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#7C3AED,#0175C2)">
+                <span class="notif__icon" aria-hidden="true">60</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Performance</span><span>Android</span></span>
+                  <strong class="notif__title">UI lag down 40%</strong>
+                  <span class="notif__text">On mid-range Android devices, through lazy loading, caching and image
+                    optimisation.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <button class="notif__inner" type="button" data-open="case-dth"
+                style="--app: linear-gradient(135deg,#0175C2,#13B9A5)">
+                <span class="notif__icon" aria-hidden="true">DTH</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">DTH LMS Pro</span><span>Streaming</span></span>
+                  <strong class="notif__title">Buffering cut 35% on 4G</strong>
+                  <span class="notif__text">Adaptive buffering and lazy loading for lesson videos.</span>
+                </span>
+              </button>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#2D8CFF,#0B5CFF)">
+                <span class="notif__icon" aria-hidden="true">Zoom</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Live classes</span><span>4 platforms</span></span>
+                  <strong class="notif__title">Zoom SDK in every project</strong>
+                  <span class="notif__text">Live classes on Android, iOS, Windows and macOS across all my learning
+                    apps.</span>
+                </span>
+              </div>
+            </li>
+            <li class="notif reveal">
+              <div class="notif__inner" style="--app: linear-gradient(135deg,#B45309,#0B2545)">
+                <span class="notif__icon" aria-hidden="true">BCA</span>
+                <span class="notif__content">
+                  <span class="notif__meta"><span class="notif__app">Education</span><span>MAKAUT</span></span>
+                  <strong class="notif__title">BCA completed, CGPA 9.04 / 10</strong>
+                  <span class="notif__text">Contai College of Learning &amp; Management Science.</span>
+                </span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEPLOYMENT ===================== -->
+    <section class="window section" id="deploy" aria-labelledby="deploy-title" style="view-transition-name: w-deploy">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">Release pipeline</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Deployment</p>
+          <h2 id="deploy-title">From one <code>lib/</code> to four platforms</h2>
+          <p class="section-lead">How one Flutter codebase becomes 30+ store releases. Click any stage to see what I
+            handle there.</p>
+        </header>
+
+        <ul class="legend" role="list" aria-label="Status legend">
+          <li><span class="dot dot--done" aria-hidden="true"></span> Every stage shipped by me</li>
+        </ul>
+
+        <div class="pipeline">
+          <div class="track reveal">
+            <div class="track__platform"><strong>Android</strong><span>lib/ &rarr;</span></div>
+            <ol class="track__stages" role="list">
+              <li><button class="stage stage--done" type="button" popovertarget="pop-a1">flutter build
+                  appbundle</button></li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-a2">Sign with upload key</button>
+              </li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-a3">Play Console release</button>
+              </li>
+            </ol>
+            <div class="track__store"><strong>Google Play</strong><span class="ok">30+ apps live</span></div>
+          </div>
+          <div class="track reveal">
+            <div class="track__platform"><strong>iOS</strong><span>lib/ &rarr;</span></div>
+            <ol class="track__stages" role="list">
+              <li><button class="stage stage--done" type="button" popovertarget="pop-i1">flutter build ipa</button></li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-i2">Certificates &amp;
+                  profiles</button></li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-i3">TestFlight &rarr; App
+                  Store</button></li>
+            </ol>
+            <div class="track__store"><strong>App Store</strong><span class="ok">Live</span></div>
+          </div>
+          <div class="track reveal">
+            <div class="track__platform"><strong>Windows</strong><span>lib/ &rarr;</span></div>
+            <ol class="track__stages" role="list">
+              <li><button class="stage stage--done" type="button" popovertarget="pop-w1">flutter build windows</button>
+              </li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-w2">MSIX package</button></li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-w3">Microsoft Store</button></li>
+            </ol>
+            <div class="track__store"><strong>Microsoft Store</strong><span class="ok">Live</span></div>
+          </div>
+          <div class="track reveal">
+            <div class="track__platform"><strong>macOS</strong><span>lib/ &rarr;</span></div>
+            <ol class="track__stages" role="list">
+              <li><button class="stage stage--done" type="button" popovertarget="pop-m1">flutter build macos</button>
+              </li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-m2">Sign &amp; notarize</button>
+              </li>
+              <li><button class="stage stage--done" type="button" popovertarget="pop-m3">Mac App Store / DMG</button>
+              </li>
+            </ol>
+            <div class="track__store"><strong>Mac App Store / DMG</strong><span class="ok">Shipped</span></div>
+          </div>
+        </div>
+
+        <div class="deploy-grid">
+          <div class="panel reveal">
+            <h3>Platform matrix</h3>
+            <div class="table-wrap">
+              <table class="matrix">
+                <caption class="sr-only">Which platforms each project shipped on</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Project</th>
+                    <th scope="col">Android</th>
+                    <th scope="col">iOS</th>
+                    <th scope="col">Windows</th>
+                    <th scope="col">macOS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">DTH LMS Pro</th>
+                    <td><span class="st st--live">30+ apps</span></td>
+                    <td><span class="st st--live">App Store</span></td>
+                    <td><span class="st st--live">MS Store</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Valuation School</th>
+                    <td><span class="st st--live">Published</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ashwini Bajaj</th>
+                    <td><span class="st st--team">Private</span></td>
+                    <td><span class="st st--team">Private</span></td>
+                    <td><span class="st st--team">Private</span></td>
+                    <td><span class="st st--team">Private</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Peaks2Tails</th>
+                    <td><span class="st st--ok">Built</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                    <td><span class="st st--ok">Built</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">DTH LMS Pro: a branded Google Play app for each of 30+ franchises, one shared iOS app for
+              all franchises, and Microsoft Store apps for 5&ndash;6 franchises. "Private" means the app is shared
+              directly with students, not listed on public stores.</p>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Release history</h3>
+            <!-- TODO: adjust the order and add real dates -->
+            <ol class="changelog" role="list">
+              <li><span class="ver">v1.0</span>
+                <div><strong>Joined Solution Infotech</strong><span>May 2024 &middot; Flutter Developer</span></div>
+              </li>
+              <li><span class="ver">v1.1</span>
+                <div><strong>First Google Play releases</strong><span>Publishing and release management</span></div>
+              </li>
+              <li><span class="ver">v1.2</span>
+                <div><strong>Secure video &amp; live classes</strong><span>media_kit encrypted player, Zoom SDK on 4
+                    platforms</span></div>
+              </li>
+              <li><span class="ver">v2.0</span>
+                <div><strong>White-label at scale</strong><span>30+ franchise-branded apps from one codebase</span>
+                </div>
+              </li>
+              <li><span class="ver">v2.1</span>
+                <div><strong>iOS on the App Store</strong><span>One common DTH LMS Pro app for all franchises</span>
+                </div>
+              </li>
+              <li><span class="ver">v2.2</span>
+                <div><strong>Desktop stores</strong><span>Microsoft Store, Mac App Store / DMG, installers</span></div>
+              </li>
+              <li><span class="ver">v2.3</span>
+                <div><strong>Push notifications</strong><span>FCM + OneSignal, +30% engagement</span></div>
+              </li>
+              <li><span class="ver">v2.4</span>
+                <div><strong>Performance pass</strong><span>&minus;40% UI lag on mid-range Android</span></div>
+              </li>
+              <li><span class="ver">v2.5</span>
+                <div><strong>Automation</strong><span>CI/CD with GitHub Actions, unit &amp; widget tests</span></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="panel ci reveal">
+            <div class="ci__head">
+              <h3>CI/CD workflow</h3>
+              <span class="st st--live">In use</span>
+            </div>
+            <p class="note">A GitHub Actions pipeline like the ones I use: analyze, test and build on every push.</p>
+            <pre class="yaml" aria-label="GitHub Actions workflow file"><code><span class="y-k">name:</span> flutter-ci
+<span class="y-k">on:</span> [push, pull_request]
+<span class="y-k">jobs:</span>
+  <span class="y-k">build:</span>
+    <span class="y-k">runs-on:</span> ubuntu-latest
+    <span class="y-k">steps:</span>
+      - <span class="y-k">uses:</span> actions/checkout@v4
+      - <span class="y-k">uses:</span> subosito/flutter-action@v2
+        <span class="y-k">with:</span> { channel: stable }
+      - <span class="y-k">run:</span> flutter pub get
+      - <span class="y-k">run:</span> flutter analyze
+      - <span class="y-k">run:</span> flutter test
+      - <span class="y-k">run:</span> flutter build appbundle --release</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESULTS ===================== -->
+    <section class="window section" id="results" aria-labelledby="results-title"
+      style="view-transition-name: w-results">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">Performance</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Results</p>
+          <h2 id="results-title">Measured impact</h2>
+          <p class="section-lead">Numbers from real projects, not just features.</p>
+        </header>
+
+        <div class="stats">
+          <article class="stat reveal">
+            <p class="stat__num" data-count="35" data-prefix="&minus;" data-suffix="%">&minus;35%</p>
+            <p class="stat__label">Video buffering on 4G</p>
+            <p class="stat__ctx">DTH LMS Pro &middot; adaptive buffering + lazy loading</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat__num" data-count="40" data-prefix="&minus;" data-suffix="%">&minus;40%</p>
+            <p class="stat__label">UI lag on mid-range Android</p>
+            <p class="stat__ctx">Widget-level caching + image optimisation</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat__num" data-count="30" data-prefix="+" data-suffix="%">+30%</p>
+            <p class="stat__label">Engagement &amp; retention</p>
+            <p class="stat__ctx">Push notification flows (FCM, OneSignal)</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat__num" data-count="25" data-prefix="+" data-suffix="%">+25%</p>
+            <p class="stat__label">Daily active sessions</p>
+            <p class="stat__ctx">DTH LMS Pro &middot; class reminders via FCM</p>
+          </article>
+        </div>
+
+        <div class="frames-panel reveal">
+          <div class="frames-panel__head">
+            <div>
+              <h3>What "40% less lag" looks like</h3>
+              <p class="note">An illustration (not real profiler data) of frame times against the 16 ms budget for 60
+                fps.</p>
+            </div>
+            <div class="seg" role="group" aria-label="Show frame times">
+              <button type="button" data-frames="before" aria-pressed="true">Before</button>
+              <button type="button" data-frames="after" aria-pressed="false">After</button>
+            </div>
+          </div>
+          <div class="frames" id="frames" data-state="before" aria-hidden="true">
+            <span class="frames__budget"><span>16 ms &middot; 60 fps budget</span></span>
+          </div>
+          <p class="frames__summary" id="frames-summary" aria-live="polite"></p>
+          <button class="btn btn--sm btn--ghost" type="button" id="fps-toggle" aria-pressed="false">
+            <svg aria-hidden="true">
+              <use href="#i-gauge" />
+            </svg> Show live FPS of this page</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="window section" id="skills" aria-labelledby="skills-title" style="view-transition-name: w-skills">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">Skills &amp; architecture</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title">How I build apps</h2>
+          <p class="section-lead">Clean architecture keeps each layer separate, so one codebase stays maintainable on
+            every platform.</p>
+        </header>
+
+        <div class="arch">
+          <div class="arch3d" aria-hidden="true">
+            <div class="arch3d__stack">
+              <div class="layer layer--data" style="--i:0"><span>Data</span></div>
+              <div class="layer layer--domain" style="--i:1"><span>Domain</span></div>
+              <div class="layer layer--ui" style="--i:2"><span>Presentation</span></div>
+            </div>
+          </div>
+          <ol class="arch__list" role="list">
+            <li class="arch__item arch__item--ui">
+              <h3>Presentation</h3>
+              <p>Widgets, responsive layouts and state with Bloc, Provider or GetX.</p>
+            </li>
+            <li class="arch__item arch__item--domain">
+              <h3>Domain</h3>
+              <p>Entities, use cases and repository contracts. Pure Dart, easy to test.</p>
+            </li>
+            <li class="arch__item arch__item--data">
+              <h3>Data</h3>
+              <p>Repositories over REST (JWT, OAuth 2.0), Firebase and encrypted local storage.</p>
+            </li>
+          </ol>
+          <figure class="bloc">
+            <svg viewBox="0 0 320 190" role="img" aria-labelledby="bloc-cap">
+              <path id="bloc-path" class="bloc__path"
+                d="M60 40 H260 A20 20 0 0 1 280 60 V130 A20 20 0 0 1 260 150 H60 A20 20 0 0 1 40 130 V60 A20 20 0 0 1 60 40 Z" />
+              <circle r="6" class="bloc__dot">
+                <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#bloc-path" />
+                </animateMotion>
+              </circle>
+              <g class="bloc__node">
+                <rect x="18" y="22" width="84" height="36" rx="10" /><text x="60" y="45">UI</text>
+              </g>
+              <g class="bloc__node">
+                <rect x="218" y="22" width="84" height="36" rx="10" /><text x="260" y="45">Event</text>
+              </g>
+              <g class="bloc__node bloc__node--main">
+                <rect x="218" y="132" width="84" height="36" rx="10" /><text x="260" y="155">Bloc</text>
+              </g>
+              <g class="bloc__node">
+                <rect x="18" y="132" width="84" height="36" rx="10" /><text x="60" y="155">State</text>
+              </g>
+            </svg>
+            <figcaption id="bloc-cap">The Bloc loop: the UI sends events, the Bloc handles them and emits new states,
+              and the UI rebuilds.</figcaption>
+          </figure>
+        </div>
+
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3>Cross-platform</h3>
+            <ul class="chips" role="list">
+              <li>Flutter</li>
+              <li>Dart</li>
+              <li>Android</li>
+              <li>Windows desktop</li>
+              <li>macOS desktop</li>
+              <li>iOS</li>
+              <li>Responsive UI</li>
+              <li>Material Design</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>State management</h3>
+            <ul class="chips" role="list">
+              <li>Bloc</li>
+              <li>Provider</li>
+              <li>GetX</li>
+              <li>Streams</li>
+              <li>ChangeNotifier</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Backend &amp; APIs</h3>
+            <ul class="chips" role="list">
+              <li>REST</li>
+              <li>Dio</li>
+              <li>JSON</li>
+              <li>HTTP/HTTPS</li>
+              <li>OAuth 2.0</li>
+              <li>JWT</li>
+              <li>Secure token storage</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Firebase</h3>
+            <ul class="chips" role="list">
+              <li>Authentication</li>
+              <li>Cloud Firestore</li>
+              <li>Cloud Storage</li>
+              <li>Cloud Messaging (FCM)</li>
+              <li>Push notifications</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Architecture</h3>
+            <ul class="chips" role="list">
+              <li>Clean Architecture</li>
+              <li>MVVM</li>
+              <li>MVC</li>
+              <li>Modular code</li>
+              <li>Separation of concerns</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Performance</h3>
+            <ul class="chips" role="list">
+              <li>Lazy loading</li>
+              <li>Infinite scroll pagination</li>
+              <li>Image caching</li>
+              <li>Widget tree optimisation</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Media &amp; SDKs</h3>
+            <ul class="chips" role="list">
+              <li>media_kit</li>
+              <li>Encrypted video</li>
+              <li>Video streaming</li>
+              <li>Zoom SDK (Android, iOS, Windows, macOS)</li>
+              <li>OneSignal</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Deployment</h3>
+            <ul class="chips" role="list">
+              <li>Google Play</li>
+              <li>App Store &amp; TestFlight</li>
+              <li>Microsoft Store (MSIX)</li>
+              <li>Mac App Store / notarized DMG</li>
+              <li>Desktop installers</li>
+              <li>White-label builds</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Quality &amp; automation</h3>
+            <ul class="chips" role="list">
+              <li>CI/CD (GitHub Actions)</li>
+              <li>Unit testing</li>
+              <li>Widget testing</li>
+              <li>Code reviews</li>
+              <li>Agile / Scrum</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Tools</h3>
+            <ul class="chips" role="list">
+              <li>Git / GitHub</li>
+              <li>Android Studio</li>
+              <li>Xcode</li>
+              <li>VS Code</li>
+              <li>Postman</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+          <div class="skill-group skill-group--learning reveal">
+            <h3>Currently learning</h3>
+            <ul class="chips" role="list">
+              <li>Riverpod</li>
+              <li>Flutter Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact reveal">
+            <h3>Education</h3>
+            <p><strong>BCA</strong> &middot; CGPA 9.04 / 10</p>
+            <p class="note">Contai College of Learning &amp; Management Science, MAKAUT University</p>
+          </div>
+          <div class="fact reveal">
+            <h3>Languages</h3>
+            <p>Bengali (native) &middot; English &middot; Hindi</p>
+          </div>
+          <div class="fact reveal">
+            <h3>Ways of working</h3>
+            <p>Agile / Scrum, 2-week sprints, code reviews, technical documentation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="window section" id="contact" aria-labelledby="contact-title"
+      style="view-transition-name: w-contact">
+      <div class="window__bar" aria-hidden="true">
+        <span class="lights only-mac"><i></i><i></i><i></i></span>
+        <span class="window__label">New Message</span>
+        <span class="winctl only-win"><i>&#8212;</i><i>&#9634;</i><i>&#10005;</i></span>
+      </div>
+      <div class="window__body">
+        <header class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let's build something for every screen</h2>
+          <p class="section-lead">I'm happy to talk about Flutter roles, freelance work or a cross-platform app idea.
+          </p>
+        </header>
+
+        <div class="contact">
+          <ul class="contact__links" role="list">
+            <li><a class="link-card" href="mailto:bs5776571@gmail.com"><svg aria-hidden="true">
+                  <use href="#i-mail" />
+                </svg><span><strong>Email</strong><span>bs5776571@gmail.com</span></span></a></li>
+            <li><a class="link-card" href="https://www.linkedin.com/in/abhoy-mallik-4588842b8" target="_blank"
+                rel="noopener"><svg aria-hidden="true">
+                  <use href="#i-link" />
+                </svg><span><strong>LinkedIn</strong><span>abhoy-mallik</span></span></a></li>
+            <li><a class="link-card" href="https://github.com/Abhoy84" target="_blank" rel="noopener"><svg
+                  aria-hidden="true">
+                  <use href="#i-link" />
+                </svg><span><strong>GitHub</strong><span>Abhoy84</span></span></a></li>
+            <li><a class="link-card" href="assets/cv/Abhoy_Mallik_CV.pdf" download><svg aria-hidden="true">
+                  <use href="#i-download" />
+                </svg><span><strong>Download CV</strong><span>PDF &middot; 1 page &middot; updated Nov
+                    2026</span></span></a></li>
+          </ul>
+
+          <!-- TODO: create a free form at formspree.io and replace YOUR_FORM_ID.
+             Until then, the form opens the visitor's email app instead. -->
+          <form class="contact__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text"
+                autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email"
+                autocomplete="email" required></div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="5"
+                required></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="f-hp">Leave this empty</label><input id="f-hp" name="_gotcha"
+                type="text" tabindex="-1" autocomplete="off"></div>
+            <div class="contact__submit">
+              <button class="btn btn--primary" type="submit"><svg aria-hidden="true">
+                  <use href="#i-mail" />
+                </svg> Send message</button>
+              <p class="form-status" id="form-status" role="status"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Abhoy Mallik &middot; Built with HTML, CSS and a little JavaScript, designed
+      like a Flutter app.</p>
+    <p class="footer__tip">Tip: add <code>?platform=ios</code> to the link to share a specific style.</p>
+  </footer>
+
+  <!-- ============ Dock / taskbar / bottom navigation ============ -->
+  <nav class="dock" aria-label="Sections" style="view-transition-name: dock">
+    <button class="dock__start only-win" type="button" popovertarget="start-menu" aria-label="Open start menu">
+      <svg aria-hidden="true">
+        <use href="#i-start" />
+      </svg>
+    </button>
+    <a class="dock__item" href="#top" style="--tile: linear-gradient(160deg,#5AC8FA,#0175C2)"><svg class="dock__icon"
+        aria-hidden="true">
+        <use href="#i-home" />
+      </svg><span class="dock__label">Home</span></a>
+    <a class="dock__item" href="#projects" style="--tile: linear-gradient(160deg,#A78BFA,#6D28D9)"><svg
+        class="dock__icon" aria-hidden="true">
+        <use href="#i-grid" />
+      </svg><span class="dock__label">Projects</span></a>
+    <a class="dock__item" href="#experience" style="--tile: linear-gradient(160deg,#FB7185,#E11D48)"><svg
+        class="dock__icon" aria-hidden="true">
+        <use href="#i-bell" />
+      </svg><span class="dock__label">Experience</span></a>
+    <a class="dock__item" href="#deploy" style="--tile: linear-gradient(160deg,#FDBA74,#EA580C)"><svg class="dock__icon"
+        aria-hidden="true">
+        <use href="#i-rocket" />
+      </svg><span class="dock__label">Deploy</span></a>
+    <a class="dock__item" href="#results" style="--tile: linear-gradient(160deg,#6EE7B7,#059669)"><svg
+        class="dock__icon" aria-hidden="true">
+        <use href="#i-chart" />
+      </svg><span class="dock__label">Results</span></a>
+    <a class="dock__item" href="#skills" style="--tile: linear-gradient(160deg,#93C5FD,#1D4ED8)"><svg class="dock__icon"
+        aria-hidden="true">
+        <use href="#i-layers" />
+      </svg><span class="dock__label">Skills</span></a>
+    <a class="dock__item" href="#contact" style="--tile: linear-gradient(160deg,#67E8F9,#0891B2)"><svg
+        class="dock__icon" aria-hidden="true">
+        <use href="#i-mail" />
+      </svg><span class="dock__label">Contact</span></a>
+    <span class="dock__tray only-win" aria-hidden="true"><svg>
+        <use href="#i-wifi" />
+      </svg><span data-clock="tray"></span></span>
+  </nav>
+  <span class="home-indicator only-phone" aria-hidden="true"></span>
+
+  <!-- Android floating action button -->
+  <a class="fab only-android" href="#contact" aria-label="Contact me"><svg aria-hidden="true">
+      <use href="#i-mail" />
+    </svg></a>
+
+  <!-- Windows start menu -->
+  <div class="start-menu" id="start-menu" popover>
+    <p class="start-menu__search" aria-hidden="true">Search for apps, settings and documents</p>
+    <h2 class="start-menu__title">Pinned</h2>
+    <ul class="start-menu__grid" role="list">
+      <li><button type="button" data-open="case-dth" style="--app: linear-gradient(135deg,#0175C2,#13B9A5)"><span
+            class="app-icon" aria-hidden="true">DTH</span>DTH LMS Pro</button></li>
+      <li><button type="button" data-open="case-admin" style="--app: linear-gradient(135deg,#7C3AED,#DB2777)"><span
+            class="app-icon" aria-hidden="true">FA</span>Franchise Admin</button></li>
+      <li><button type="button" data-open="case-vs" style="--app: linear-gradient(135deg,#B45309,#F59E0B)"><span
+            class="app-icon" aria-hidden="true">VS</span>Valuation School</button></li>
+      <li><button type="button" data-open="case-ab" style="--app: linear-gradient(135deg,#BE123C,#F97316)"><span
+            class="app-icon" aria-hidden="true">AB</span>Ashwini Bajaj</button></li>
+      <li><button type="button" data-open="case-p2t" style="--app: linear-gradient(135deg,#0F766E,#0B2545)"><span
+            class="app-icon" aria-hidden="true">P2T</span>Peaks2Tails</button></li>
+      <li><a href="#deploy" style="--app: linear-gradient(135deg,#FDBA74,#EA580C)"><span class="app-icon"
+            aria-hidden="true"><svg>
+              <use href="#i-rocket" />
+            </svg></span>Deploy</a></li>
+      <li><a href="#contact" style="--app: linear-gradient(135deg,#67E8F9,#0891B2)"><span class="app-icon"
+            aria-hidden="true"><svg>
+              <use href="#i-mail" />
+            </svg></span>Contact</a></li>
+    </ul>
+    <div class="start-menu__foot">
+      <span class="start-menu__user"><span class="brand__mark" aria-hidden="true">AM</span> Abhoy Mallik</span>
+      <a class="btn btn--sm" href="assets/cv/Abhoy_Mallik_CV.pdf" download><svg aria-hidden="true">
+          <use href="#i-download" />
+        </svg> CV</a>
+    </div>
+  </div>
+
+  <!-- ============ Stage popovers (deployment pipeline) ============ -->
+  <div class="info-pop" id="pop-a1" popover>
+    <h3>flutter build appbundle</h3>
+    <p>Builds a release Android App Bundle (<code>.aab</code>), the format Google Play requires. Each franchise build
+      gets its own app ID, name and logo from the same codebase.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-a2" popover>
+    <h3>Sign with the upload key</h3>
+    <p>The bundle is signed with an upload keystore so Google Play can verify it came from us. Play App Signing then
+      signs the copies users download.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-a3" popover>
+    <h3>Google Play Console release</h3>
+    <p>I publish and maintain 30+ franchise-branded DTH LMS Pro apps on Google Play, plus The Valuation School:
+      uploading builds, writing release notes and rolling out updates.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-i1" popover>
+    <h3>flutter build ipa</h3>
+    <p>Builds the iOS archive and <code>.ipa</code>. I built and shipped the iOS version of DTH LMS Pro (one common app
+      for all franchises) and the iOS versions of my other apps.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-i2" popover>
+    <h3>Certificates &amp; provisioning profiles</h3>
+    <p>I manage Apple certificates, provisioning profiles and code signing so builds install and pass App Store checks.
+    </p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-i3" popover>
+    <h3>TestFlight &rarr; App Store</h3>
+    <p>Beta builds go out through TestFlight, then through App Store review to release.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-w1" popover>
+    <h3>flutter build windows</h3>
+    <p>Builds the Windows desktop app. I built the Windows versions of DTH LMS Pro, The Valuation School, Ashwini Bajaj
+      and Peaks2Tails.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-w2" popover>
+    <h3>MSIX package</h3>
+    <p>Packages the app as a signed MSIX for clean installs and automatic updates.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-w3" popover>
+    <h3>Microsoft Store</h3>
+    <p>I published DTH LMS Pro Windows apps for 5&ndash;6 franchises on the Microsoft Store.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-m1" popover>
+    <h3>flutter build macos</h3>
+    <p>Builds the macOS <code>.app</code> bundle. I built the macOS versions of DTH LMS Pro, The Valuation School,
+      Ashwini Bajaj and Peaks2Tails.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-m2" popover>
+    <h3>Sign &amp; notarize</h3>
+    <p>Developer ID signing, entitlements and Apple notarization, so macOS Gatekeeper trusts the app when users open it.
+    </p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+  <div class="info-pop" id="pop-m3" popover>
+    <h3>Mac App Store / DMG</h3>
+    <p>macOS apps distributed through the Mac App Store or as a notarized DMG.</p>
+    <p class="info-pop__status st st--live">Shipped by me</p>
+  </div>
+
+  <!-- ============ Case study dialogs ============ -->
+  <!-- TODO: replace the .mock blocks with real screenshots, e.g.
+     <img src="assets/img/dth-phone.webp" alt="DTH LMS Pro course list on Android" loading="lazy" width="390" height="844"> -->
+  <dialog class="case" id="case-dth" aria-labelledby="case-dth-title"
+    style="--app: linear-gradient(135deg,#0175C2,#13B9A5)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">DTH</span>
+      <div>
+        <h2 id="case-dth-title">DTH LMS Pro</h2>
+        <p>White-label learning management system &middot; Flutter, Dart, Bloc, Firebase, media_kit, Zoom SDK, REST API
+        </p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="mock" aria-hidden="true">
+        <div class="mock__phone">
+          <div class="mock__appbar">DTH LMS Pro</div>
+          <div class="mock__video"></div><i></i><i></i><i class="short"></i><i></i>
+        </div>
+        <div class="mock__window">
+          <div class="mock__titlebar"><span class="lights"><i></i><i></i><i></i></span></div>
+          <div class="mock__desk">
+            <div class="mock__side"><i></i><i></i><i></i><i></i></div>
+            <div class="mock__main">
+              <div class="mock__video"></div><i></i><i class="short"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--live">Android &middot; 30+ Play Store apps</li>
+        <li class="badge badge--live">iOS &middot; App Store</li>
+        <li class="badge badge--live">Windows &middot; Microsoft Store</li>
+        <li class="badge badge--ok">macOS</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>30+ franchises each wanted their own branded learning app, with their own logo and name, for recorded
+            lessons, live classes and announcements on phones and computers, while keeping paid video content protected.
+          </p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>I built DTH LMS Pro for Android, iOS, Windows and macOS using clean architecture, and I run the releases:
+            30+ branded apps on Google Play, one common iOS app on the App Store, and Microsoft Store apps for 5&ndash;6
+            franchises.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>White-label setup: each franchise build gets its own app name, logo and store listing from the same
+          codebase.</li>
+        <li>Encrypted video player with <code>media_kit</code> for secure lesson playback.</li>
+        <li>Zoom SDK integration for live instructor-student classes on Android, iOS, Windows and macOS.</li>
+        <li>Role-based authentication and course access control with Firebase Authentication and JWT tokens.</li>
+        <li>Adaptive buffering and lazy loading for smoother streaming on mobile networks.</li>
+        <li>FCM push notifications for class reminders, new content and announcements.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>30+</strong><span>branded apps</span></div>
+        <div><strong>20,000+</strong><span>students</span></div>
+        <div><strong>&minus;35%</strong><span>buffering on 4G</span></div>
+        <div><strong>+25%</strong><span>daily active sessions</span></div>
+      </div>
+      <!-- TODO: add the Play Store link:
+    <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=YOUR.APP.ID" target="_blank" rel="noopener">View on Google Play</a> -->
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-admin" aria-labelledby="case-admin-title"
+    style="--app: linear-gradient(135deg,#7C3AED,#DB2777)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">FA</span>
+      <div>
+        <h2 id="case-admin-title">Franchise &amp; Teacher Admin</h2>
+        <p>Admin management app (Android, iOS) &middot; Flutter, Dart, GetX, Firebase Firestore, Zoom SDK</p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="mock" aria-hidden="true">
+        <div class="mock__window mock__window--wide">
+          <div class="mock__titlebar"><span class="lights"><i></i><i></i><i></i></span></div>
+          <div class="mock__desk">
+            <div class="mock__side"><i></i><i></i><i></i><i></i></div>
+            <div class="mock__main">
+              <div class="mock__tiles"><b></b><b></b><b></b></div>
+              <div class="mock__chart"></div><i></i><i class="short"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--ok">Android</li>
+        <li class="badge badge--ok">iOS</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>Franchise managers and teachers needed one place to track student progress, schedule classes, mark
+            attendance and see performance reports.</p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>I built the role-based admin app for Android and iOS, covering progress, scheduling, attendance and
+            reporting screens.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>Role-based access so managers and teachers each see the right tools.</li>
+        <li>Firestore real-time listeners for instant sync across devices.</li>
+        <li>GetX for reactive UI updates, improving dashboard responsiveness and page load times.</li>
+        <li>Zoom SDK integrated for live classes on Android and iOS.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>20+</strong><span>franchise admins</span></div>
+        <div><strong>Real-time</strong><span>cross-device sync</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-vs" aria-labelledby="case-vs-title"
+    style="--app: linear-gradient(135deg,#B45309,#F59E0B)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">VS</span>
+      <div>
+        <h2 id="case-vs-title">The Valuation School</h2>
+        <p>CA exam preparation app &middot; Flutter, Dart</p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="mock" aria-hidden="true">
+        <div class="mock__phone">
+          <div class="mock__appbar">Valuation School</div>
+          <div class="mock__otp"><b></b><b></b><b></b><b></b></div><i></i><i class="short"></i>
+        </div>
+        <div class="mock__window">
+          <div class="mock__titlebar"><span class="lights"><i></i><i></i><i></i></span></div>
+          <div class="mock__desk">
+            <div class="mock__side"><i></i><i></i><i></i></div>
+            <div class="mock__main"><i></i><i></i><i class="short"></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--live">Android &middot; Google Play</li>
+        <li class="badge badge--ok">iOS</li>
+        <li class="badge badge--ok">Windows</li>
+        <li class="badge badge--ok">macOS</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>CA Foundation, Intermediate and Final students needed simple, secure access to structured study material on
+            their phones and computers.</p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>I developed the Android, iOS, Windows and macOS versions, and published and maintained the Android release
+            on Google Play.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>OTP-based mobile sign-in for quick, password-free access.</li>
+        <li>Structured study material organised by CA level.</li>
+        <li>Zoom SDK integrated for live classes on Android, iOS, Windows and macOS.</li>
+        <li>One Flutter codebase delivered to four platforms.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>4</strong><span>platforms</span></div>
+        <div><strong>Live</strong><span>on Google Play</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-p2t" aria-labelledby="case-p2t-title"
+    style="--app: linear-gradient(135deg,#0F766E,#0B2545)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">P2T</span>
+      <div>
+        <h2 id="case-p2t-title">Peaks2Tails</h2>
+        <p>Finance training platform app &middot; Flutter, Dart</p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="mock" aria-hidden="true">
+        <div class="mock__window mock__window--wide">
+          <div class="mock__titlebar"><span class="lights"><i></i><i></i><i></i></span></div>
+          <div class="mock__desk">
+            <div class="mock__side"><i></i><i></i><i></i><i></i></div>
+            <div class="mock__main">
+              <div class="mock__chart"></div><i></i><i class="short"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--ok">Android</li>
+        <li class="badge badge--ok">iOS</li>
+        <li class="badge badge--ok">Windows</li>
+        <li class="badge badge--ok">macOS</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>Peaks2Tails trains learners in financial risk modelling and quantitative finance, and needed a learning app
+            for both mobile and desktop users.</p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>I developed the Android, iOS, Windows and macOS versions of the app.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>Zoom SDK integrated for live classes on Android, iOS, Windows and macOS.</li>
+        <li>One Flutter codebase delivered to four platforms.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>4</strong><span>platforms from one codebase</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-ab" aria-labelledby="case-ab-title"
+    style="--app: linear-gradient(135deg,#BE123C,#F97316)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">AB</span>
+      <div>
+        <h2 id="case-ab-title">Ashwini Bajaj</h2>
+        <p>Private learning app &middot; Flutter, Dart, Zoom SDK</p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="mock" aria-hidden="true">
+        <div class="mock__phone">
+          <div class="mock__appbar">Ashwini Bajaj</div>
+          <div class="mock__otp"><b></b><b></b><b></b><b></b></div><i></i><i class="short"></i>
+        </div>
+        <div class="mock__window">
+          <div class="mock__titlebar"><span class="lights"><i></i><i></i><i></i></span></div>
+          <div class="mock__desk">
+            <div class="mock__side"><i></i><i></i><i></i></div>
+            <div class="mock__main">
+              <div class="mock__video"></div><i></i><i class="short"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--ok">Android</li>
+        <li class="badge badge--ok">iOS</li>
+        <li class="badge badge--ok">Windows</li>
+        <li class="badge badge--ok">macOS</li>
+        <li class="badge badge--team">Private distribution</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>Ashwini Bajaj wanted a learning app only for their own students, not listed on public app stores, with
+            secure sign-in, structured study material and live classes on phones and computers.</p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>I developed the Android, iOS, Windows and macOS versions. The app is distributed privately: builds are
+            shared directly with students instead of public store listings.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>OTP-based mobile sign-in for quick, password-free access.</li>
+        <li>Structured study material for students.</li>
+        <li>Zoom SDK integrated for live classes on Android, iOS, Windows and macOS.</li>
+        <li>One Flutter codebase delivered to four platforms, distributed privately.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>4</strong><span>platforms</span></div>
+        <div><strong>Private</strong><span>distribution to students</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ============ Live regions & overlays ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <p class="sr-only" id="sr-status" aria-live="polite"></p>
+  <div class="fps" id="fps" hidden><span id="fps-value">60</span> fps</div>
+</body>
+
+</html>

@@ -756,7 +756,7 @@
   .shots figure { flex: none; width: clamp(150px, 38vw, 200px); margin: 0; scroll-snap-align: center; }
   .shots img {
     display: block; width: 100%; height: auto;
-    aspect-ratio: 540 / 1204;
+    aspect-ratio: 400 / 892;
     border: 5px solid #111; border-radius: 20px;
     background: var(--surface-solid);
     box-shadow: var(--shadow-sm);

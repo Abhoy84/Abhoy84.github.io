@@ -675,6 +675,9 @@
 
   /* ===================== DIALOGS (case studies) ===================== */
   .case {
+    /* the global `* { margin: 0 }` reset removes the browser's centering; put it back */
+    position: fixed; inset: 0; margin: auto;
+    height: fit-content;
     width: min(920px, 100% - 2rem);
     max-height: min(88dvh, 920px);
     padding: 0;

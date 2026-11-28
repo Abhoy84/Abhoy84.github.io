@@ -509,6 +509,32 @@
                 </div>
               </div>
             </article>
+
+            <article class="app-card" style="--app: linear-gradient(135deg,#312E81,#B45309)">
+              <div class="app-card__layout">
+                <div class="app-icon" aria-hidden="true">GV</div>
+                <div class="app-card__body">
+                  <h3>Grahavani</h3>
+                  <p>Vedic astrology app: generate a Kundli from birth details, read the charts and ask an AI astrologer
+                    about your own chart. Personal open-source project.</p>
+                  <ul class="badges" role="list" aria-label="Platforms">
+                    <li class="badge badge--ok">Android</li>
+                    <li class="badge badge--team">Open source</li>
+                  </ul>
+                  <ul class="pills" role="list" aria-label="Tech stack">
+                    <li>Flutter</li>
+                    <li>Riverpod</li>
+                    <li>Gemini AI</li>
+                    <li>Firebase</li>
+                    <li>Hive</li>
+                  </ul>
+                  <div class="app-card__foot">
+                    <p class="app-card__metric"><strong>Offline</strong> Kundli engine</p>
+                    <button class="btn btn--accent btn--sm" type="button" data-open="case-gv">Open case study</button>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
           <div class="carousel__progress" aria-hidden="true"><span></span></div>
         </div>
@@ -1619,6 +1645,90 @@
       <div class="case__results">
         <div><strong>4</strong><span>platforms</span></div>
         <div><strong>Private</strong><span>distribution to students</span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-gv" aria-labelledby="case-gv-title"
+    style="--app: linear-gradient(135deg,#312E81,#B45309)">
+    <div class="case__head">
+      <span class="app-icon" aria-hidden="true">GV</span>
+      <div>
+        <h2 id="case-gv-title">Grahavani</h2>
+        <p>Vedic astrology &amp; AI astrologer &middot; Flutter, Dart, Riverpod, Hive, Firebase AI (Gemini)</p>
+      </div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close case study"><svg aria-hidden="true">
+            <use href="#i-close" />
+          </svg></button></form>
+    </div>
+    <div class="case__body">
+      <div class="shots" tabindex="0" role="region" aria-label="Grahavani app screenshots. Scroll sideways to see more.">
+        <figure>
+          <img src="assets/img/grahavani/home-forecast.jpg" alt="Grahavani home screen with the Lagna, Moon and Sun signs and today's forecast" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>Home &middot; daily forecast</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/grahavani/kundli-chart.jpg" alt="North Indian birth chart with planets, retrograde and exalted markers" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>Kundli chart</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/grahavani/jyotish-guru.jpg" alt="Jyotish Guru AI astrologer answering a question about marriage timing" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>Jyotish Guru (AI)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/grahavani/panchang.jpg" alt="Daily Panchang screen" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>Panchang</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/grahavani/birth-details.jpg" alt="Birth details form with offline place search" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>Birth details</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/grahavani/more.jpg" alt="More screen with tools and settings" loading="lazy" decoding="async" width="540" height="1204">
+          <figcaption>More</figcaption>
+        </figure>
+      </div>
+      <ul class="badges" role="list" aria-label="Platforms">
+        <li class="badge badge--ok">Android</li>
+        <li class="badge badge--team">Open source &middot; Apache-2.0</li>
+      </ul>
+      <div class="case__cols">
+        <div>
+          <h3>The problem</h3>
+          <p>Most Kundli apps need an account, send birth details to a server and charge for readings. I wanted a
+            Vedic astrology app that calculates on the phone, keeps birth data private and costs nothing to run.</p>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <p>Personal project, built end to end by me: product plan, calculation engine, UI, AI integration, tests and
+            documentation. Source is public on <a href="https://github.com/Abhoy84/grahavani" target="_blank"
+              rel="noopener">GitHub</a>.</p>
+        </div>
+      </div>
+      <h3>Approach</h3>
+      <ul class="case__list">
+        <li>Pure-Dart calculation engine: planets, Lagna, nakshatras, Navamsa (D9), Vimshottari dasha and Panchang,
+          using the Lahiri ayanamsa. It runs fully offline.</li>
+        <li>Planet positions come from a compact Chebyshev table built from NASA/JPL DE440s, covering 1850&ndash;2150, and
+          are tested against Swiss Ephemeris (planets within 3&ndash;4 arcseconds).</li>
+        <li>North and South Indian charts drawn with custom painters, plus planet table, dasha timeline, Avakhada and
+          Manglik, Kaal Sarp and Sade Sati doshas.</li>
+        <li>Rule-based forecasts for Today, Week, Month and Year from Vedic transits, so the same chart always gives
+          the same reading.</li>
+        <li>Jyotish Guru: Gemini through Firebase AI Logic, with streamed replies and voice input. It receives only the
+          calculated chart, never the name, birth date, time or place. Daily free limits come from Remote Config.</li>
+        <li>Birth place search: an offline list of about 70,000 towns, plus online village search and current location,
+          with the historical time zone worked out for each place.</li>
+        <li>Birth details stored only on the device (Hive). Google sign-in is optional; everything works as a guest.</li>
+        <li>Riverpod and go_router for state and navigation, with unit and widget tests for the engine, forecasts, chat
+          and auth.</li>
+      </ul>
+      <h3>Results</h3>
+      <div class="case__results">
+        <div><strong>Offline</strong><span>Kundli calculations, no server</span></div>
+        <div><strong>1850&ndash;2150</strong><span>birth years supported</span></div>
+        <div><strong>25</strong><span>test files</span></div>
+        <div><strong>$0</strong><span>running cost (free tiers)</span></div>
       </div>
     </div>
   </dialog>
